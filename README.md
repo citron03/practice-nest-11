@@ -1,6 +1,7 @@
 # Practice Nest.js v11
 
 - https://docs.nestjs.com/first-steps
+- pnpm run start & http://localhost:3000/
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>

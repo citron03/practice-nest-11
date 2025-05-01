@@ -1,0 +1,31 @@
+{
+    // 자동 저장
+    "files.autoSave": "onFocusChange",
+  
+    // 저장 시 ESLint로 fix
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.fixAll.eslint": true
+    },
+  
+    // Prettier가 아니라 ESLint 기반 포맷 사용
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  
+    // TypeScript 등에서도 ESLint 포맷 사용
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+  
+    // ESLint Flat config 사용 시 필요
+    "eslint.experimental.useFlatConfig": true,
+  
+    // ESLint 자동 실행
+    "eslint.validate": ["javascript", "typescript", "typescriptreact"]
+  }
+  
