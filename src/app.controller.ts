@@ -1,12 +1,24 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+// src/user/user.controller.ts
+import { Controller, Get, Post, Body } from '@nestjs/common';
 
-@Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { CreateUserDto } from './user/dto/create-user.dto';
+import { UserService } from './user/user.service';
+
+@ApiTags('users')
+@Controller('users')
+export class UserController {
+  constructor(private readonly userService: UserService) {}
+
+  @Post()
+  @ApiOperation({ summary: '유저 생성' })
+  create(@Body() body: CreateUserDto) {
+    return this.userService.createUser(body.name, body.email);
+  }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @ApiOperation({ summary: '모든 유저 조회' })
+  findAll() {
+    return this.userService.getAllUsers();
   }
 }
