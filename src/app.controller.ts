@@ -13,7 +13,7 @@ export class UserController {
   @Post()
   @ApiOperation({ summary: '유저 생성' })
   create(@Body() body: CreateUserDto) {
-    return this.userService.createUser(body.name, body.email);
+    return this.userService.createUser({ name: body.name, email: body.email });
   }
 
   @Get()
